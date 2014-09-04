@@ -18,28 +18,17 @@ public class WorldDelete {
         if( world != null ) {
             Player[] onlinePlayers = instance.getServer().getOnlinePlayers();
             for( Player player : onlinePlayers ){
-                player.sendMessage("Server Rebooting"); // Kicks any players for reset
-                ByteArrayOutputStream b = new ByteArrayOutputStream();
-                DataOutputStream out = new DataOutputStream(b);
-
-                try {
-                    out.writeUTF("Connect");
-                    out.writeUTF("hub");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                player.sendPluginMessage(instance, "BungeeCord", b.toByteArray());
+                player.kickPlayer("Server Rebooting"); // Kicks any players for reset
             }
 
-            instance.getServer().getLogger().info("Old UHC world found...");
+            instance.getServer().getLogger().info("World found...");
             instance.getServer().unloadWorld(name, true);
             File directory = new File(name);
             if (directory.exists()) {
                 try {
-                    instance.getServer().getLogger().info("Deleting old UHC world...");
+                    instance.getServer().getLogger().info("Deleting world...");
                     com.enkelhosting.filemanager.Main.deleteFiles(directory);
-                    instance.getServer().getLogger().info("Deleted old UHC world");
+                    instance.getServer().getLogger().info("Deleted world");
                     return true;
                 } catch (IOException ignored) {
                     return false;
