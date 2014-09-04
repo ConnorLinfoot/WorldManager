@@ -1,0 +1,7 @@
+name: WorldManager
+description: WorldManager
+main: com.connorlinfoot.worldmanager.Main
+version: 1.0
+commands:
+  wm:
+    description: World Manager Main Command

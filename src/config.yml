@@ -1,0 +1,12 @@
+#
+#                WorldManager
+#                Version: 1.0
+#               Connor Linfoot
+#
+
+Config Version: 0
+Stats Enabled: true
+Debug Mode: false
+World Importer: false
+Importer World Name: backup
+Destination World Name: world
