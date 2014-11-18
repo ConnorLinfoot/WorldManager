@@ -93,7 +93,7 @@ public class Startup {
                             System.out.println("World does not exist");
                         } else {
                             try {
-                                WorldImporter.copyFolder(srcFolder, destFolder);
+                                com.enkelhosting.filemanager.Main.copyFolder(srcFolder, destFolder);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
